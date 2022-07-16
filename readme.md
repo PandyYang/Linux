@@ -1,5 +1,6 @@
 # Linux脚本
 
+## scp拷贝
 ### 跨服务器拷贝文件 推模式
 ```shell
 scp -r /opt/module/jdk root@127.0.0.1:/opt/module
@@ -14,3 +15,10 @@ scp -r root@hadoop102:/opt/module/hadoop-3.1.3 ./
 ```shell
 scp -r root@hadoop102:/opt/module/* root@hadoop104:/opt/module
 ```
+
+## rsync 同步
+### 同步命令性能强于scp
+```shell
+rsync -av hadoop-3.1.3/ root@hadoop103:/opt/module/hadoop-3.1.3/
+```
+
