@@ -1,4 +1,4 @@
-# Linux脚本
+# Linux脚本及命令
 
 ## scp拷贝
 ### 跨服务器拷贝文件 推模式
@@ -22,3 +22,16 @@ scp -r root@hadoop102:/opt/module/* root@hadoop104:/opt/module
 rsync -av hadoop-3.1.3/ root@hadoop103:/opt/module/hadoop-3.1.3/
 ```
 
+## 免密登录 
+在每台服务器上重复下面的步骤
+### 生成公钥和私钥
+```shell
+ssh-keygen -t rsa
+```
+
+### 将公钥拷贝至需要免密登录的机器上
+```shell
+ssh-copy-id hadoop102
+ssh-copy-id hadoop103
+ssh-copy-id hadoop104
+```
